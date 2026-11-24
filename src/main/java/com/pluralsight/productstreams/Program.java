@@ -40,16 +40,14 @@ public class Program {
     private static List<Product> getProductsByCategory(List<Product> products, String category) {
         // STEP A (loop): make an empty list, loop through products, and add each one
         //   whose category matches (equalsIgnoreCase). Return the list.
-        List<Product> byCategory = new ArrayList<>();
-        for (Product product : products) {
-            if (product.getCategory().equalsIgnoreCase(category)) {
-                byCategory.add(product);
-            }
-        }
-
+//        List<Product> byCategory = new ArrayList<>();
+//        for (Product product : products) {
+//            if (product.getCategory().equalsIgnoreCase(category)) {
+//                byCategory.add(product);
+//            }
+//        }
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
-
-        return byCategory; // replace this line
+        return products.stream().filter(product -> product.getCategory().equalsIgnoreCase(category)).toList(); // replace this line
     }
 
     // TASK 2: the total of every product's price
@@ -86,7 +84,6 @@ public class Program {
 //        }
         // STEP B: products.forEach(...) with a lambda
         products.forEach(product -> System.out.println("Product: " + product.getName() + " Price: " + product.getPrice() + " Category: " + product.getCategory()));
-
     }
 
     private static List<Product> getInventory() {
