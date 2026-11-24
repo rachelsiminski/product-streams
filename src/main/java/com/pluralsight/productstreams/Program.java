@@ -82,6 +82,10 @@ public class Program {
     // TASK 4: a list of just the prices
     private static List<BigDecimal> getPrices(List<Product> products) {
         // STEP A (loop): an empty List<BigDecimal>; add each product's price
+        List<BigDecimal> prices = new ArrayList<>();
+        for (Product product : products) {
+            prices.add(product.getPrice());
+        }
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .toList()
 
