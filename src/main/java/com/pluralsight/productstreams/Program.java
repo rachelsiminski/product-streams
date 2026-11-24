@@ -58,17 +58,25 @@ public class Program {
             total = total.add(product.getPrice());
         }
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
-        //   then .reduce(BigDecimal.ZERO, ...) to add them up
-
+        //   then .reduce(BigDecimal.ZERO, ...) to add them up    --- WHAT??
+        //products.stream().
         return total; // replace this line
     }
 
     // TASK 3: how many products are in one category
     private static long countProductsInCategory(List<Product> products, String category) {
         // STEP A (loop): a count that starts at 0, plus 1 for each match
+        int count = 0;
+        List<Product> byCategory = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getCategory().equalsIgnoreCase(category)) {
+                byCategory.add(product);
+                count++;
+            }
+        }
         // STEP B (stream): .filter(...), then .count()
 
-        return 0; // replace this line
+        return count; // replace this line
     }
 
     // TASK 4: a list of just the prices
