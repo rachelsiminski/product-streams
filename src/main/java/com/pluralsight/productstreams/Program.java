@@ -1,5 +1,6 @@
 package com.pluralsight.productstreams;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,6 +40,13 @@ public class Program {
     private static List<Product> getProductsByCategory(List<Product> products, String category) {
         // STEP A (loop): make an empty list, loop through products, and add each one
         //   whose category matches (equalsIgnoreCase). Return the list.
+        List<Product> byCategory = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getCategory().equalsIgnoreCase(category)) {
+                byCategory.add(product);
+            }
+        }
+
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
 
         return new ArrayList<>(); // replace this line
