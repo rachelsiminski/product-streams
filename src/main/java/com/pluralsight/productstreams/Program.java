@@ -49,7 +49,7 @@ public class Program {
 
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
 
-        return new ArrayList<>(); // replace this line
+        return byCategory; // replace this line
     }
 
     // TASK 2: the total of every product's price
@@ -81,6 +81,9 @@ public class Program {
     // TASK 5: print each product
     private static void printProducts(List<Product> products) {
         // STEP A (loop): a for-each loop that prints each product
+        for (Product product : products) {
+            System.out.println("Product: " + product.getName() + " Price: " + product.getPrice() + " Category: " + product.getCategory());
+        }
         // STEP B: products.forEach(...) with a lambda
 
     }
